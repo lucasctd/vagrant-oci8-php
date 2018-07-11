@@ -1,10 +1,9 @@
 # vagrant-oci8-php
 A simple Vagrantfile to create a box (ubuntu/xenial64) with PHP5.6+ (you choose), apache2 and oracle driver (oci8).
 
-How to:
+## How to:
 
-1- Run install_vagrant_plugins.bat to install vagrant-env and vagrant-winnfsd, you should run this file as adm;
-2- Make a copy of .env.example as .env and set the path to your application. Remember to use "//" instead of "/". There are also other parameters which are self-explanatory;
-3- Run "vagrant up"
-4- That's it =D
-
+1. Run __install_vagrant_plugins.bat__ to install vagrant-env and vagrant-winnfsd, you should run this file as __adm__;  
+1. Make a copy of __.env.example__ as __.env__ and set the path to your application. Remember to use __"//"__ instead of __"/"__. There are also other parameters which are self-explanatory;  
+1. Run __"vagrant up"__  
+1. __That's it =D__
