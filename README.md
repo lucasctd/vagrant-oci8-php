@@ -10,7 +10,7 @@ A simple Vagrantfile to create a box (ubuntu/xenial64) with PHP5.6+ (you choose)
 
 
 
-__*Tested on PHP 5.6, 7.0, 7.1 and 7.2.
+__*Tested on PHP 5.6, 7.0, 7.1 and 7.2.__
 
 ### What next?
 
