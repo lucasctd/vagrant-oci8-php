@@ -7,3 +7,11 @@ A simple Vagrantfile to create a box (ubuntu/xenial64) with PHP5.6+ (you choose)
 1. Make a copy of __.env.example__ as __.env__ and set the path to your application. Remember to use __"//"__ instead of __"/"__. There are also other parameters which are self-explanatory;  
 1. Run __"vagrant up"__  
 1. __That's it =D__
+
+
+
+__*Tested on PHP 5.6, 7.0, 7.1 and 7.2.
+
+### What next?
+
+I am also planning to make it working with **nginx**.
