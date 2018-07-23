@@ -11,6 +11,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", type: "dhcp"
   #set sync folder
   config.vm.synced_folder ENV['APP_ROOT_PATH'], "/home/vagrant/site", type: 'nfs'
+  config.vm.synced_folder 'logs', "/var/log", type: 'nfs'
   #set vm memory
   config.vm.provider "virtualbox" do |vb|
       vb.memory = ENV['MEMORY']
