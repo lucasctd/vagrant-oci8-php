@@ -25,6 +25,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "conf/oci8.ini", destination: "/home/vagrant/oci8.ini"
   config.vm.provision "file", source: "conf/xdebug.conf", destination: "/home/vagrant/xdebug.conf"
   #run scripts
+  config.vm.provision "shell", path: "scripts/update-timezone.sh", args: ENV['TIME_ZONE']
   config.vm.provision "shell", path: "scripts/update-repository-add-vagrant-adm-group.sh"
   config.vm.provision "shell", path: "scripts/install-apache.sh"
   config.vm.provision "shell", path: "scripts/install-php.sh", args: ENV['PHP_VERSION']
