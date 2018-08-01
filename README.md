@@ -3,7 +3,7 @@ A simple Vagrantfile to create a box (ubuntu/xenial64) with PHP 5.6+ (you choose
 
 ## How to:
 
-1. Run __install_vagrant_plugins.bat__ to install vagrant-env and vagrant-winnfsd, you should run this file as __adm__;  
+1. Run __install_vagrant_plugins.bat__ to install vagrant-env, vagrant-winnfsd and vagrant-timezone, you should run this file as __adm__;  
 1. Make a copy of __.env.example__ as __.env__ and set the path to your application. Remember to use __"//"__ instead of __"/"__. There are also other parameters which are self-explanatory;  
 1. Run __"vagrant up"__  
 1. __That's it =D__
