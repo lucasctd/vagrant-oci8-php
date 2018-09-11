@@ -17,20 +17,19 @@ Vagrant.configure("2") do |config|
     vb.memory = ENV['MEMORY']
     vb.name = "site-vm"
   end
-  if !File.file?(".installed")
-    #copy files  
-    config.vm.provision "file", source: "conf/site.conf", destination: "/home/vagrant/site.conf"
-    config.vm.provision "file", source: "bin/oracle-instantclient12.2-basic_12.2.0.1.0-2_amd64.deb", destination: "/home/vagrant/oracle-instantclient12.2-basic_12.2.0.1.0-2_amd64.deb"
-    config.vm.provision "file", source: "bin/oracle-instantclient12.2-devel_12.2.0.1.0-2_amd64.deb", destination: "/home/vagrant/oracle-instantclient12.2-devel_12.2.0.1.0-2_amd64.deb"
-    config.vm.provision "file", source: "conf/oci8.ini", destination: "/home/vagrant/oci8.ini"
-    config.vm.provision "file", source: "conf/xdebug.conf", destination: "/home/vagrant/xdebug.conf"
-    #run scripts
-    config.vm.provision "shell", path: "scripts/update-timezone.sh", args: ENV['TIME_ZONE']
-    config.vm.provision "shell", path: "scripts/update-repository-add-vagrant-adm-group.sh"
-    config.vm.provision "shell", path: "scripts/install-apache.sh"
-    config.vm.provision "shell", path: "scripts/install-php.sh", args: ENV['PHP_VERSION']
-    config.vm.provision "shell", path: "scripts/add-site-conf.sh", args: ENV['PHP_VERSION']
-    config.vm.provision "shell", path: "scripts/install-oci8.sh", args: ENV['PHP_VERSION']
-  end
-  config.vm.provision "shell", path: "scripts/restart-apache.sh"
+  #copy files  
+  config.vm.provision "file", source: "conf/site.conf", destination: "/home/vagrant/site.conf"
+  config.vm.provision "file", source: "bin/oracle-instantclient12.2-basic_12.2.0.1.0-2_amd64.deb", destination: "/home/vagrant/oracle-instantclient12.2-basic_12.2.0.1.0-2_amd64.deb"
+  config.vm.provision "file", source: "bin/oracle-instantclient12.2-devel_12.2.0.1.0-2_amd64.deb", destination: "/home/vagrant/oracle-instantclient12.2-devel_12.2.0.1.0-2_amd64.deb"
+  config.vm.provision "file", source: "conf/oci8.ini", destination: "/home/vagrant/oci8.ini"
+  config.vm.provision "file", source: "conf/xdebug.conf", destination: "/home/vagrant/xdebug.conf"
+  #run scripts
+  config.vm.provision "shell", path: "scripts/update-timezone.sh", args: ENV['TIME_ZONE']
+  config.vm.provision "shell", path: "scripts/update-repository-add-vagrant-adm-group.sh"
+  config.vm.provision "shell", path: "scripts/install-apache.sh"
+  config.vm.provision "shell", path: "scripts/install-php.sh", args: ENV['PHP_VERSION']
+  config.vm.provision "shell", path: "scripts/add-site-conf.sh", args: ENV['PHP_VERSION']
+  config.vm.provision "shell", path: "scripts/install-oci8.sh", args: ENV['PHP_VERSION']
+  #Sometimes apache2 does not work as expected, so it will be restarted on every "vagrant up"
+  config.vm.provision "shell", path: "scripts/restart-apache.sh", run: "always"
 end
