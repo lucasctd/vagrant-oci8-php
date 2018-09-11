@@ -1,2 +1,2 @@
-vagrant up --provision
+vagrant up
 pause
