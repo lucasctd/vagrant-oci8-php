@@ -12,6 +12,6 @@ A simple Vagrantfile to create a box (ubuntu/xenial64) with PHP 5.6+ (you choose
 
 __*Tested on PHP 5.6, 7.0, 7.1 and 7.2.__
 
-### What next?
+### What's next?
 
 I am also planning to make it working with **nginx**.
