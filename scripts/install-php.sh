@@ -5,7 +5,7 @@ echo "***********************************************************************"
 echo "-----------------------------------------------------------------------"
 sudo add-apt-repository -y ppa:ondrej/php
 sudo apt-get update
-sudo apt-get -y install "php$1-common" "php$1-cli" "php$1" "libapache2-mod-php$1" "php$1-xml" php-pear "php$1-dev" libaio1 "php$1-mbstring" "php$1-xdebug" --allow-unauthenticated
+sudo apt-get -y install "php$1-common" "php$1-cli" "php$1" "libapache2-mod-php$1" "php$1-xml" php-pear "php$1-dev" libaio1 "php$1-mbstring" "php$1-xdebug" "php$1-mysql" "php$1-zip" --allow-unauthenticated
 sudo cat /home/vagrant/xdebug.conf | sudo tee -a "/etc/php/$1/apache2/conf.d/20-xdebug.ini"
 echo "-----------------------------------------------------------------------"
 echo "***********************************************************************"
