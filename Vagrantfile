@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
   #set vm memory
   config.vm.provider "virtualbox" do |vb|
     vb.memory = ENV['MEMORY']
-    vb.name = "site-vm"
+    vb.name = ENV['BOX_NAME']
   end
   #copy files  
   config.vm.provision "file", source: "conf/site.conf", destination: "/home/vagrant/site.conf"
